@@ -1,0 +1,10 @@
+Place your icon files here:
+- icon.ico (Windows)
+- icon.icns (macOS)
+- icon.png (256x256 or larger for Linux/general use)
+
+You can use tools like:
+- https://www.icoconverter.com/
+- https://cloudconvert.com/png-to-ico
+
+To create the icons from a source PNG image.

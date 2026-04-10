@@ -1,0 +1,107 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output
+dist/
+release/
+out/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+nul
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Testing
+coverage/
+
+# Temporary
+tmp/
+temp/
+*.tmp
+tmpclaude-*
+
+# Electron
+.electron-builder-cache/
+*.asar
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Dev screenshots in root
+/*.png
+
+# Dev/debug scripts in root (not in src/)
+/ask-*.js
+/capture*.js
+/capture*.ps1
+/chatgpt-*.js
+/check-*.js
+/click-*.js
+/collab-*.js
+/create-*.js
+/debug-*.js
+/do-*.js
+/download-*.js
+/extract-*.js
+/fetch-*.js
+/final-*.js
+/find-*.js
+/focus-*.js
+/generate-*.js
+/get-*.js
+/go-*.js
+/list-*.js
+/mcp-*.js
+/nav-*.js
+/new-tab-*.js
+/open-*.js
+/quick-*.js
+/refresh-*.js
+/reload-*.js
+/resize-*.js
+/run-*.ps1
+/save-*.js
+/screenshot*.js
+/scroll-*.js
+/send-*.js
+/show-*.js
+/simple-*.js
+/snap.js
+/sse-client.js
+/switch-*.js
+/take-*.js
+/take-*.ps1
+/test-mcp.js
+/test-toggle.js
+/toggle-*.js
+/trigger-*.js
+/view-*.js
+
+# Claude Code local settings
+.claude/settings.local.json
+.claude/settings.local.*.json
+
+# Dev files
+/clientid.txt
+/eaight-logo-tubes.html
+/prompt.md
+/BROWSER_UI_IMPLEMENTATION.md
+/UI_ISSUES_REPORT.md

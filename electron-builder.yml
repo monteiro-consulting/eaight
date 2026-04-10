@@ -1,0 +1,37 @@
+appId: com.eaight.browser
+productName: eaight
+copyright: Copyright © 2024 eaight
+
+directories:
+  output: release
+  buildResources: resources
+
+files:
+  - dist/**/*
+  - resources/**/*
+  - "!**/*.map"
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  icon: resources/icons/icon.ico
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  installerIcon: resources/icons/icon.ico
+  uninstallerIcon: resources/icons/icon.ico
+  installerHeaderIcon: resources/icons/icon.ico
+
+extraResources:
+  - from: resources/themes
+    to: themes
+  - from: resources/mcp-bridge.js
+    to: mcp-bridge.js
+
+publish:
+  provider: github
+  owner: eaight
+  repo: eaight

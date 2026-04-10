@@ -1,0 +1,396 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   CSS Variables - Theme System
+   ============================================
+   These are set dynamically by the theme system.
+   Fallback values provided for development.
+*/
+
+:root {
+  /* Base palette fallbacks (dark theme) */
+  --color-bg-primary: #1a1a2e;
+  --color-bg-secondary: #232340;
+  --color-bg-tertiary: #2d2d4a;
+  --color-bg-elevated: #363654;
+
+  --color-fg-primary: #ffffff;
+  --color-fg-secondary: #b0b0c0;
+  --color-fg-muted: #707088;
+  --color-fg-disabled: #505068;
+  --color-fg-onAccent: #ffffff;
+
+  --color-accent-primary: #25ced1;
+  --color-accent-secondary: #ea526f;
+  --color-accent-tertiary: #ff8a5b;
+
+  --color-success: #4ade80;
+  --color-warning: #fbbf24;
+  --color-error: #f87171;
+  --color-info: #60a5fa;
+
+  --color-border-default: #3a3a5c;
+  --color-border-subtle: #2a2a44;
+  --color-border-focus: #25ced1;
+
+  /* Fonts */
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'SF Mono', 'Cascadia Code', 'Fira Code', Consolas, monospace;
+  --font-size-xs: 11px;
+  --font-size-sm: 12px;
+  --font-size-base: 13px;
+  --font-size-lg: 14px;
+  --font-size-xl: 16px;
+
+  /* Spacing */
+  --spacing-unit: 4px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-full: 9999px;
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  background-color: var(--color-bg-primary);
+  color: var(--color-fg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   Custom Scrollbar
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track, transparent);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb, rgba(255, 255, 255, 0.15));
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumbHover, rgba(255, 255, 255, 0.25));
+}
+
+/* ============================================
+   Draggable Title Bar
+   ============================================ */
+
+.title-bar-drag {
+  -webkit-app-region: drag;
+}
+
+.title-bar-no-drag {
+  -webkit-app-region: no-drag;
+}
+
+/* ============================================
+   Focus Styles
+   ============================================ */
+
+:focus-visible {
+  outline: 2px solid var(--focusRing, var(--color-border-focus));
+  outline-offset: 2px;
+}
+
+/* ============================================
+   Semantic Component Classes
+   ============================================ */
+
+/* Title Bar */
+.eaight-titlebar {
+  background-color: var(--titleBar-background, var(--color-bg-primary));
+  color: var(--titleBar-foreground, var(--color-fg-primary));
+  border-bottom: 1px solid var(--titleBar-border, var(--color-border-subtle));
+}
+
+/* Tab Bar */
+.eaight-tabbar {
+  background-color: var(--tabBar-background, var(--color-bg-secondary));
+  border-bottom: 1px solid var(--tabBar-border, var(--color-border-default));
+  overflow: hidden;
+}
+
+/* Tab */
+.eaight-tab {
+  background-color: var(--tab-background, transparent);
+  color: var(--tab-foreground, var(--color-fg-secondary));
+  position: relative;
+  box-shadow: inset 0 0 12px rgba(112, 112, 136, 0.15);
+}
+
+.eaight-tab:hover {
+  background-color: var(--tab-hoverBackground, var(--color-bg-tertiary));
+  color: var(--tab-hoverForeground, var(--color-fg-primary));
+  box-shadow: inset 0 0 15px rgba(112, 112, 136, 0.25);
+}
+
+.eaight-tab.active {
+  background-color: var(--tab-activeBackground, var(--color-bg-primary));
+  color: var(--tab-activeForeground, var(--color-fg-primary));
+  z-index: 1;
+  box-shadow:
+    inset 0 0 20px rgba(37, 206, 209, 0.2),
+    inset 0 -5px 15px rgba(37, 206, 209, 0.1);
+}
+
+.eaight-tab.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-accent-primary);
+  box-shadow:
+    0 0 8px var(--color-accent-primary),
+    0 0 16px var(--color-accent-primary),
+    0 2px 12px var(--color-accent-primary);
+}
+
+/* Tab in group - neon glow on BOTTOM */
+.eaight-tab.in-group::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--group-color);
+  box-shadow:
+    0 0 6px var(--group-color),
+    0 0 12px var(--group-color),
+    0 -2px 8px var(--group-color);
+}
+
+/* Tab Group Header - minimal pill style */
+.eaight-tab-group-header {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  margin-right: 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.eaight-tab-group-header:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* URL Bar */
+.eaight-urlbar {
+  background-color: var(--urlBar-background, var(--color-bg-tertiary));
+  color: var(--urlBar-foreground, var(--color-fg-primary));
+  border: 1px solid var(--urlBar-border, var(--color-border-default));
+}
+
+.eaight-urlbar:focus-within {
+  background-color: var(--urlBar-focusBackground, var(--color-bg-elevated));
+  border-color: var(--urlBar-focusBorder, var(--color-border-focus));
+}
+
+.eaight-urlbar::placeholder {
+  color: var(--urlBar-placeholderForeground, var(--color-fg-muted));
+}
+
+/* Navigation Buttons */
+.eaight-nav-button {
+  background-color: var(--navigation-buttonBackground, transparent);
+  color: var(--navigation-buttonForeground, var(--color-fg-secondary));
+}
+
+.eaight-nav-button:hover:not(:disabled) {
+  background-color: var(--navigation-buttonHoverBackground, var(--color-bg-tertiary));
+}
+
+.eaight-nav-button:disabled {
+  color: var(--navigation-buttonDisabledForeground, var(--color-fg-disabled));
+}
+
+/* AI Panel */
+.eaight-aipanel {
+  background-color: var(--aiPanel-background, var(--color-bg-secondary));
+  color: var(--aiPanel-foreground, var(--color-fg-primary));
+  border-left: 1px solid var(--aiPanel-border, var(--color-border-default));
+}
+
+.eaight-aipanel-header {
+  background-color: var(--aiPanel-headerBackground, var(--color-bg-tertiary));
+  color: var(--aiPanel-headerForeground, var(--color-fg-primary));
+}
+
+/* Menu */
+.eaight-menu {
+  background-color: var(--menu-background, var(--color-bg-elevated));
+  color: var(--menu-foreground, var(--color-fg-primary));
+  border: 1px solid var(--menu-border, var(--color-border-default));
+}
+
+.eaight-menu-item:hover {
+  background-color: var(--menu-itemHoverBackground, var(--color-bg-tertiary));
+  color: var(--menu-itemHoverForeground, var(--color-fg-primary));
+}
+
+.eaight-menu-separator {
+  background-color: var(--menu-separatorBackground, var(--color-border-subtle));
+}
+
+/* Buttons */
+.eaight-button-primary {
+  background-color: var(--button-primaryBackground, var(--color-accent-primary));
+  color: var(--button-primaryForeground, var(--color-fg-onAccent));
+}
+
+.eaight-button-primary:hover {
+  background-color: var(--button-primaryHoverBackground, #2ee0e3);
+}
+
+.eaight-button-secondary {
+  background-color: var(--button-secondaryBackground, var(--color-accent-secondary));
+  color: var(--button-secondaryForeground, var(--color-fg-onAccent));
+}
+
+.eaight-button-secondary:hover {
+  background-color: var(--button-secondaryHoverBackground, #f06680);
+}
+
+.eaight-button-ghost {
+  background-color: transparent;
+  color: var(--button-ghostForeground, var(--color-fg-secondary));
+}
+
+.eaight-button-ghost:hover {
+  background-color: var(--button-ghostHoverBackground, var(--color-bg-tertiary));
+}
+
+/* Inputs */
+.eaight-input {
+  background-color: var(--input-background, var(--color-bg-tertiary));
+  color: var(--input-foreground, var(--color-fg-primary));
+  border: 1px solid var(--input-border, var(--color-border-default));
+}
+
+.eaight-input:focus {
+  border-color: var(--input-focusBorder, var(--color-border-focus));
+  outline: none;
+}
+
+.eaight-input::placeholder {
+  color: var(--input-placeholderForeground, var(--color-fg-muted));
+}
+
+/* Badges */
+.eaight-badge {
+  background-color: var(--badge-background, var(--color-accent-primary));
+  color: var(--badge-foreground, var(--color-fg-onAccent));
+}
+
+/* Tooltip */
+.eaight-tooltip {
+  background-color: var(--tooltip-background, var(--color-bg-elevated));
+  color: var(--tooltip-foreground, var(--color-fg-primary));
+  border: 1px solid var(--tooltip-border, var(--color-border-default));
+}
+
+/* Status Indicators */
+.eaight-status-success {
+  background-color: var(--status-successBackground, var(--color-success));
+  color: var(--status-successForeground, var(--color-fg-onAccent));
+}
+
+.eaight-status-error {
+  background-color: var(--status-errorBackground, var(--color-error));
+  color: var(--status-errorForeground, var(--color-fg-onAccent));
+}
+
+.eaight-status-warning {
+  background-color: var(--status-warningBackground, var(--color-warning));
+  color: var(--status-warningForeground, #1a1a2e);
+}
+
+.eaight-status-loading {
+  background-color: var(--status-loadingBackground, var(--color-info));
+  color: var(--status-loadingForeground, var(--color-fg-onAccent));
+}
+
+/* ============================================
+   Tailwind Component Overrides
+   ============================================ */
+
+@layer components {
+  .btn {
+    @apply px-3 py-1.5 rounded-md font-medium transition-colors;
+    border-radius: var(--radius-md);
+  }
+
+  .btn-primary {
+    background-color: var(--button-primaryBackground, var(--color-accent-primary));
+    color: var(--button-primaryForeground, var(--color-fg-onAccent));
+  }
+
+  .btn-primary:hover {
+    background-color: var(--button-primaryHoverBackground);
+  }
+
+  .btn-secondary {
+    background-color: var(--button-secondaryBackground, var(--color-accent-secondary));
+    color: var(--button-secondaryForeground, var(--color-fg-onAccent));
+  }
+
+  .btn-ghost {
+    background-color: transparent;
+  }
+
+  .btn-ghost:hover {
+    background-color: var(--button-ghostHoverBackground, var(--color-bg-tertiary));
+  }
+
+  .input {
+    @apply w-full px-3 py-2;
+    background-color: var(--input-background, var(--color-bg-tertiary));
+    border: 1px solid var(--input-border, var(--color-border-default));
+    border-radius: var(--radius-md);
+    color: var(--input-foreground, var(--color-fg-primary));
+  }
+
+  .input:focus {
+    border-color: var(--input-focusBorder, var(--color-border-focus));
+    outline: none;
+  }
+}
+
+/* ============================================
+   Selection
+   ============================================ */
+
+::selection {
+  background-color: var(--selection-background, rgba(37, 206, 209, 0.25));
+}

@@ -1,0 +1,165 @@
+/* === EAIGHT NTP - 3D Tubes Animation === */
+
+:root {
+  --c-cyan: #25ced1;
+  --c-pink: #ea526f;
+  --c-orange: #ff8a5b;
+  --bg: #0c0c1a;
+}
+
+.ntp-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 25vh;
+  overflow: hidden;
+}
+
+/* 3D Tubes Canvas - Full screen background */
+.ntp-tubes-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Search Bar - Above canvas */
+.ntp-search-wrapper {
+  width: 100%;
+  max-width: 540px;
+  z-index: 10;
+  position: relative;
+}
+
+.ntp-search-form {
+  display: flex;
+  align-items: center;
+  background: rgba(11, 15, 20, 0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 14px;
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.ntp-search-form:focus-within {
+  border-color: rgba(37, 206, 209, 0.3);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4),
+              0 0 20px rgba(37, 206, 209, 0.1);
+}
+
+.ntp-engine-selector {
+  position: relative;
+}
+
+.ntp-engine-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(37, 206, 209, 0.12);
+  color: var(--c-cyan);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ntp-engine-btn:hover {
+  background: rgba(37, 206, 209, 0.22);
+}
+
+.ntp-engine-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: rgba(11, 15, 20, 0.98);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  padding: 6px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 100;
+  min-width: 170px;
+}
+
+.ntp-engine-option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.15s;
+}
+
+.ntp-engine-option:hover {
+  background: rgba(37, 206, 209, 0.1);
+}
+
+.ntp-engine-option.active {
+  background: rgba(37, 206, 209, 0.18);
+  color: #fff;
+}
+
+.ntp-engine-icon {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 5px;
+}
+
+.ntp-search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 12px 14px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+}
+
+.ntp-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.ntp-search-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background: var(--c-cyan);
+  color: var(--bg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.ntp-search-btn:hover {
+  background: #2dd4bf;
+  box-shadow: 0 0 18px rgba(37, 206, 209, 0.45);
+}

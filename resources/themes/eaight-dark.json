@@ -1,0 +1,44 @@
+{
+  "$schema": "./schema.json",
+  "name": "eaight Dark",
+  "type": "dark",
+  "colors": {
+    "background": {
+      "primary": "#1a1a2e",
+      "secondary": "#2a2a4a",
+      "tertiary": "#3a3a5c"
+    },
+    "foreground": {
+      "primary": "#ffffff",
+      "secondary": "#a0a0b0",
+      "muted": "#6b7280"
+    },
+    "accent": {
+      "primary": "#25ced1",
+      "secondary": "#ea526f",
+      "tertiary": "#ff8a5b",
+      "success": "#4ade80",
+      "warning": "#facc15",
+      "error": "#ef4444",
+      "info": "#25ced1"
+    },
+    "border": {
+      "default": "#3a3a5c",
+      "focus": "#25ced1"
+    }
+  },
+  "fonts": {
+    "family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    "sizeBase": 14,
+    "sizeSmall": 12,
+    "sizeLarge": 16
+  },
+  "spacing": {
+    "unit": 4
+  },
+  "borderRadius": {
+    "small": 4,
+    "medium": 8,
+    "large": 12
+  }
+}

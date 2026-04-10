@@ -1,0 +1,191 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "eaight Theme Schema",
+  "description": "VS Code-like theme schema for eaight browser",
+  "type": "object",
+  "required": ["name", "type", "colors"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "JSON schema reference"
+    },
+    "name": {
+      "type": "string",
+      "description": "Theme display name"
+    },
+    "id": {
+      "type": "string",
+      "description": "Unique theme identifier"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["dark", "light", "hc", "hc-light"],
+      "description": "Theme type (dark, light, high contrast dark, high contrast light)"
+    },
+    "version": {
+      "type": "string",
+      "description": "Theme version"
+    },
+    "author": {
+      "type": "string",
+      "description": "Theme author"
+    },
+    "description": {
+      "type": "string",
+      "description": "Theme description"
+    },
+    "colors": {
+      "type": "object",
+      "description": "Theme color definitions",
+      "properties": {
+        "editor.background": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "editor.foreground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "editor.lineNumberColor": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "editor.selectionBackground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "editor.lineHighlightBackground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "editorCursor.foreground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "sidebar.background": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "sidebar.foreground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "sidebar.border": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "sidebarTitle.foreground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "list.hoverBackground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "list.activeSelectionBackground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "list.focusBackground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "input.background": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "input.foreground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "input.border": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "input.placeholderForeground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "dropdown.background": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "dropdown.foreground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "dropdown.border": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "button.background": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "button.foreground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "button.hoverBackground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "button.secondaryBackground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "button.secondaryForeground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "badge.background": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "badge.foreground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "statusBar.background": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "statusBar.foreground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "statusBar.border": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "titleBar.activeBackground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "titleBar.activeForeground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "titleBar.inactiveBackground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "titleBar.inactiveForeground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "titleBar.border": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "activityBar.background": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "activityBar.foreground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "activityBar.activeBorder": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "activityBarBadge.background": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "activityBarBadge.foreground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "tab.activeBackground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "tab.activeForeground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "tab.activeBorder": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "tab.activeBorderTop": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "tab.inactiveBackground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "tab.inactiveForeground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "tab.hoverBackground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "editorGroupHeader.tabsBackground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "focusBorder": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "foreground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "disabledForeground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "errorForeground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "scrollbar.shadow": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "scrollbarSlider.background": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "scrollbarSlider.hoverBackground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "scrollbarSlider.activeBackground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "progressBar.background": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "menu.background": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "menu.foreground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "menu.selectionBackground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "menu.selectionForeground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "menu.separatorBackground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "menu.border": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "notifications.background": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "notifications.foreground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "notifications.border": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "terminal.background": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "terminal.foreground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "terminal.ansiBlack": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "terminal.ansiRed": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "terminal.ansiGreen": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "terminal.ansiYellow": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "terminal.ansiBlue": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "terminal.ansiMagenta": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "terminal.ansiCyan": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+        "terminal.ansiWhite": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" }
+      },
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^#[0-9A-Fa-f]{6,8}$"
+      }
+    },
+    "tokenColors": {
+      "type": "array",
+      "description": "Syntax highlighting colors",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "scope": {
+            "oneOf": [
+              { "type": "string" },
+              { "type": "array", "items": { "type": "string" } }
+            ]
+          },
+          "settings": {
+            "type": "object",
+            "properties": {
+              "foreground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+              "background": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+              "fontStyle": { "type": "string", "enum": ["", "italic", "bold", "underline", "italic bold", "bold italic"] }
+            }
+          }
+        }
+      }
+    },
+    "semanticTokenColors": {
+      "type": "object",
+      "description": "Semantic token colors",
+      "additionalProperties": {
+        "oneOf": [
+          { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+          {
+            "type": "object",
+            "properties": {
+              "foreground": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6,8}$" },
+              "fontStyle": { "type": "string" }
+            }
+          }
+        ]
+      }
+    },
+    "fonts": {
+      "type": "object",
+      "properties": {
+        "family": { "type": "string" },
+        "monoFamily": { "type": "string" },
+        "sizeBase": { "type": "number" },
+        "sizeSmall": { "type": "number" },
+        "sizeLarge": { "type": "number" },
+        "lineHeight": { "type": "number" },
+        "letterSpacing": { "type": "number" }
+      }
+    },
+    "ui": {
+      "type": "object",
+      "properties": {
+        "borderRadius": {
+          "type": "object",
+          "properties": {
+            "small": { "type": "number" },
+            "medium": { "type": "number" },
+            "large": { "type": "number" }
+          }
+        },
+        "spacing": { "type": "number" },
+        "compactMode": { "type": "boolean" }
+      }
+    }
+  }
+}
